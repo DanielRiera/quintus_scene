@@ -46,7 +46,7 @@ label {
 	display: block;
 	padding: 15px;
 }
-.closeConfig, .openConfig, .export {
+.closeConfig, .openConfig {
 	position: absolute;
 	right: 5px;
 	top: 5px;
