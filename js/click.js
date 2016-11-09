@@ -18,3 +18,6 @@ $(".export").on("click", function(){
 	GS.exportBackground();
 	GS.exportCollision();
 });
+$(".changeTiles").on("click", function(){
+	urlTiles = $(".urlTiles").val();
+});
