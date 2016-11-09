@@ -46,7 +46,7 @@ label {
 	display: block;
 	padding: 15px;
 }
-.closeConfig, .openConfig {
+.closeConfig, .openConfig, .export {
 	position: absolute;
 	right: 5px;
 	top: 5px;
@@ -55,6 +55,7 @@ label {
 	background-color: #333;
 	color: #FFF;
 }
+
 .generateScene {
 	position: absolute;
 	bottom: 0;
