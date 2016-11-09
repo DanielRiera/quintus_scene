@@ -31,7 +31,7 @@ var GS = {
 			var pos = '-'+parseInt(widthCell*i);
 			objects.push(pos);
 			var background = 'background: url("'+urlTiles+'") '+pos+'px 0;';
-			$(".objects").append("<li><div class='selectObject' data-i='"+i+"' style='width:"+widthCell+"px;height:"+widthCell+"px;"+background+"'></div><input type='number' data-i='"+i+"' class='collision' value='0' /></li>");
+			$(".objects").append("<li><div class='selectObject' data-i='"+i+"' style='width:"+widthCell+"px;height:"+widthCell+"px;"+background+"'></div><input type='number' data-i='"+i+"' class='collision' value='0' /><a class='all' data-i='"+i+"'>All</a></li>");
 		}
 		$(".objects").append("</ul>");
 		console.log(objects);
