@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+	<a class="openConfig">Open Config</a>
+	<a class="export">Export</a>
+	<div class="config">
+	<h2>Configuration Scene</h2>
+	<a class="closeConfig">Close</a>
+		<label>Width <input class="width_scene" type="number" value="15" /></label>
+		<label>Height <input class="height_scene" type="number" value="15" /></label>
+		<label>Width Cell <input class="width_cell" type="number" value="32" /></label>
+		<label>Number of images in Tiles <input class="objects_tiles" type="number" value="5" /></label>
+		<button class="generateScene">Generate Scene</button>
+	</div>
+	<div class="objects">
+		
+	</div>
+	<div class="scene">
+		<table cellpadding="0" cellspacing="0">
+			
+		</table>
+	</div>
+<script src="js/jquery.js"></script>
+<script src="js/click.js"></script>
+<script src="js/logic.js"></script>
+<script type="text/javascript">
+	GS.initial();
+</script>
+</body>
+</html>
