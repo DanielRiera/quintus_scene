@@ -83,6 +83,15 @@ var GS = {
 				'height': widthCell+'px'
 			}).attr("data-value",objectSelectAll);
 		});
+		$('.cell').hover(function(){   
+		   var $this = $(this);
+		   var col   = $this.index();
+		   var row   = $this.closest('tr').index();
+
+		   $(".position").html( [col,row].join(',') );
+		}, function(){
+			$(".position").html('');
+		});
 	},
     exportBackground: function(){
         var scene = $(".scene table tr td");

@@ -19,10 +19,3 @@ $(".export").on("click", function(){
 	GS.exportBackground();
 	GS.exportCollision();
 });
-$('td').hover(function(){   
-   var $this = $(this);
-   var col   = $this.index();
-   var row   = $this.closest('tr').index();
-
-   $(".position").html( [col,row].join(',') );
-});
