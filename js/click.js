@@ -19,12 +19,3 @@ $(".export").on("click", function(){
 	GS.exportBackground();
 	GS.exportCollision();
 });
-$(".all").on("click",function(){
-	var pos = objects[tilesActive];
-	$(".cel").css({
-		'width': '32px',
-		'background-image': 'url("'+urlTiles+'")',
-		'background-position': pos+'px 0',
-		'height': '32px'
-	});
-});
