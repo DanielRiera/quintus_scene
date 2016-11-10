@@ -1,10 +1,15 @@
 var GS = {
 	initial: function(){
 		console.log("Ok System");
-		tilesActive = 0;
+		tilesActive = null;
 		totalWidth = 0;
+		widthCell = 32;
 		urlTiles = "images/tiles.png";
+<<<<<<< HEAD
 		clicking = false;
+=======
+		clicking = true;
+>>>>>>> refs/remotes/origin/gh-pages
 	},
 	generationScene: function(width, height, number,widthCell){
 		var rows = "";
@@ -32,7 +37,7 @@ var GS = {
 			var pos = '-'+parseInt(widthCell*i);
 			objects.push(pos);
 			var background = 'background: url("'+urlTiles+'") '+pos+'px 0;';
-			$(".objects").append("<li><div class='selectObject' data-i='"+i+"' style='width:"+widthCell+"px;height:"+widthCell+"px;"+background+"'></div><input type='number' data-i='"+i+"' class='collision' value='0' /><a class='all' data-i='"+i+"'>All</a></li>");
+			$(".objects").append("<li><div class='selectObject' data-i='"+i+"' style='width:"+widthCell+"px;height:"+widthCell+"px;"+background+"'></div><input type='number' data-i='"+i+"' class='collision' value='0' /><a class='allCells' data-i='"+i+"'>All</a></li>");
 		}
 		$(".objects").append("</ul>");
 		console.log(objects);
@@ -49,7 +54,7 @@ var GS = {
     		
 		});
 		$(".cell").mousemove(function(){
-			if(clicking === false) return;
+			if(clicking === false && tilesActive!=null) return;
 
 			var pos = objects[tilesActive];
 			$(this).css({
@@ -62,15 +67,38 @@ var GS = {
 			$(this).attr("data-value",tilesActive);
 		});
 		$(".cell").click(function(){
-			var pos = objects[tilesActive];
-			$(this).css({
-				'width': '32px',
+			if(tilesActive!=null) {
+				var pos = objects[tilesActive];
+				$(this).css({
+					'width': '32px',
+					'background-image': 'url("'+urlTiles+'")',
+					'background-position': pos+'px 0',
+					'height': '32px'
+				});
+				console.log("Cell - " + pos);
+				$(this).attr("data-value",tilesActive);
+			}
+		});
+		$(".allCells").on("click", function(){
+			console.log("Add all style");
+			var objectSelectAll = $(this).attr("data-i");
+			tilesActive = objectSelectAll;
+			var pos = objects[$(this).attr("data-i")];
+			$(".scene table tr td").css({
+				'width': widthCell+'px',
 				'background-image': 'url("'+urlTiles+'")',
 				'background-position': pos+'px 0',
-				'height': '32px'
-			});
-			console.log("Cell - " + pos);
-			$(this).attr("data-value",tilesActive);
+				'height': widthCell+'px'
+			}).attr("data-value",objectSelectAll);
+		});
+		$('.cell').hover(function(){   
+		   var $this = $(this);
+		   var col   = $this.index();
+		   var row   = $this.closest('tr').index();
+
+		   $(".position").html( [col+1,row+1].join(',') );
+		}, function(){
+			$(".position").html('');
 		});
 	},
     exportBackground: function(){
@@ -136,6 +164,33 @@ var GS = {
 
         dlink.click();
         dlink.remove();
+    },
+    uploadScene: function(data) {
+    	var text = JSON.parse(data);
+    	var scene = $(".scene table tr td");
+        //var sceneExist = new Array();
+        //var rowsSceneExist = new Array();
+        console.log("Objectos es " + JSON.stringify(objects));
+       	var b = -1;
+       	var i = 0;
+        for(i=0;i<scene.length;i++) {
+        	if (i % totalWidth === 0) {
+                b++;
+                i=0;
+            }
+        	var index = text[b][i];
+             var pos = objects[index];
+            $(".scene table tr:eq("+b+") td:eq("+i+")").css({
+            	'width': widthCell+'px',
+				'background-image': 'url("'+urlTiles+'")',
+				'background-position': pos+'px 0',
+				'height': widthCell+'px'
+            }).attr("data-value",index);
+            
+           
+            console.log("Cargado desde archivo BACKGROUND " + JSON.stringify(index) + " con b en " +b+" con i en " + i);
+        }
+        
     }
 
 };

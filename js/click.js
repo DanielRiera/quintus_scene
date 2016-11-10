@@ -9,7 +9,7 @@ $(".generateScene").on("click", function(){
 });
 
 $(".closeConfig").on("click", function(){
-	$(".config").fadeOut(100);
+	$(".modal").fadeOut(100);
 });
 
 $(".openConfig").on("click", function(){
@@ -19,12 +19,12 @@ $(".export").on("click", function(){
 	GS.exportBackground();
 	GS.exportCollision();
 });
-$(".all").on("click",function(){
-	var pos = objects[tilesActive];
-	$(".cel").css({
-		'width': '32px',
-		'background-image': 'url("'+urlTiles+'")',
-		'background-position': pos+'px 0',
-		'height': '32px'
-	});
+$(".generateWithExist").on("click",function(){
+	var text = $(".text_exist").val();
+	$(".modal").fadeOut(100);
+	GS.uploadScene(text);
+
+});
+$(".Openusing").on("click", function(){
+	$(".using").fadeIn(100);
 });
