@@ -4,6 +4,7 @@ var GS = {
 		tilesActive = 0;
 		totalWidth = 0;
 		urlTiles = "images/tiles.png";
+		clicking = true;
 	},
 	generationScene: function(width, height, number,widthCell){
 		var rows = "";

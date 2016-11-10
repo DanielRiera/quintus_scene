@@ -19,7 +19,7 @@ $(".export").on("click", function(){
 	GS.exportBackground();
 	GS.exportCollision();
 });
-$(".all").on("click",function(){
+$(".allCells").on("click",function(){
 	var pos = objects[tilesActive];
 	$(".cel").css({
 		'width': '32px',
