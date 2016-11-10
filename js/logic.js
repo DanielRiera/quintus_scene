@@ -74,13 +74,14 @@ var GS = {
 		});
 		$(".allCells").on("click", function(){
 			console.log("Add all style");
+			var objectSelectAll = $(this).attr("data-i");
 			var pos = objects[$(this).attr("data-i")];
 			$(".scene table tr td").css({
 				'width': widthCell+'px',
 				'background-image': 'url("'+urlTiles+'")',
 				'background-position': pos+'px 0',
 				'height': widthCell+'px'
-			}).attr("data-value",pos);
+			}).attr("data-value",objectSelectAll);
 		});
 	},
     exportBackground: function(){
