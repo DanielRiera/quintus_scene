@@ -5,7 +5,7 @@ var GS = {
 		totalWidth = 0;
 		widthCell = 32;
 		urlTiles = "images/tiles.png";
-		clicking = true;
+		clicking = false;
 	},
 	generationScene: function(width, height, number,widthCell){
 		var rows = "";
@@ -164,9 +164,6 @@ var GS = {
     uploadScene: function(data) {
     	var text = JSON.parse(data);
     	var scene = $(".scene table tr td");
-        //var sceneExist = new Array();
-        //var rowsSceneExist = new Array();
-        console.log("Objectos es " + JSON.stringify(objects));
        	var b = -1;
        	var i = 0;
         for(i=0;i<scene.length;i++) {
@@ -182,9 +179,6 @@ var GS = {
 				'background-position': pos+'px 0',
 				'height': widthCell+'px'
             }).attr("data-value",index);
-            
-           
-            console.log("Cargado desde archivo BACKGROUND " + JSON.stringify(index) + " con b en " +b+" con i en " + i);
         }
         
     }
