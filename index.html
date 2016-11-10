@@ -9,15 +9,21 @@
 <body>
 	<a class="openConfig">Open Config</a>
 	<a class="export">Export</a>
-	<div class="config">
+	<a class="Openusing">Using Exist</a>
+	<div class="modal config">
 	<h2>Configuration Scene</h2>
 	<a class="closeConfig">Close</a>
-		<label>Width <input class="width_scene" type="number" value="15" /></label>
-		<label>Height <input class="height_scene" type="number" value="15" /></label>
+		<label>Width <input class="width_scene" type="number" value="20" /></label>
+		<label>Height <input class="height_scene" type="number" value="50" /></label>
 		<label>Width Cell <input class="width_cell" type="number" value="32" /></label>
-		<label>Number of images in Tiles <input class="objects_tiles" type="number" value="5" /></label>
-		<label> Image Tiles <input type="text" class="urlTiles" value="images/tiles.png" title="Using http or relative" /></label>
+		<label>Number of images in Tiles <input class="objects_tiles" type="number" value="6" /></label>
+		<label> Image Tiles <input type="text" class="urlTiles" value="http://212.227.158.125/tiles.png" title="Using http or relative" /></label>
 		<button class="generateScene">Generate Scene</button>
+	</div>
+	<div class="modal using">
+		<a class="closeConfig">Close</a>
+		<label>Level <textarea class="text_exist" placeholder="Paste your level_background here"></textarea></label>
+		<button class="generateWithExist">Generate Scene</button>
 	</div>
 	<div class="objects">
 		
@@ -27,7 +33,7 @@
 			
 		</table>
 	</div>
-	<div class="version">Version 0.0.5</div>
+	<div class="version">Version 0.0.6</div>
 	<div class="position"></div>
 <script src="js/jquery.js"></script>
 <script src="js/logic.js"></script>
