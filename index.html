@@ -11,7 +11,7 @@
 	<a class="export">Export</a>
 	<a class="Openusing">Using Exist</a>
 	<div class="modal config">
-	<h2>Configuration Scene</h2>
+	<h2>Scene Configuration</h2>
 	<a class="closeConfig">Close</a>
 		<label>Width <input class="width_scene" type="number" value="20" /></label>
 		<label>Height <input class="height_scene" type="number" value="50" /></label>
@@ -26,14 +26,21 @@
 		<button class="generateWithExist">Generate Scene</button>
 	</div>
 	<div class="objects">
-		
+		<h2>1.- Objects</h2>
+		<div class="list_object"></div>
+	<div class="PersonalElement">
+		<h2>2.- Elements</h2>
+		<input type="text" class="newPersonalElement" value="player" /><button class="addElement">Add</button>
+		<div class="list_personalElement"></div>
+	</div>	
 	</div>
+	
 	<div class="scene">
 		<table cellpadding="0" cellspacing="0">
 			
 		</table>
 	</div>
-	<div class="version">Version 0.0.6</div>
+	<div class="version">Version 0.0.7</div>
 	<div class="position"></div>
 <script src="js/jquery.js"></script>
 <script src="js/logic.js"></script>
