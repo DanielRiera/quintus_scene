@@ -27,6 +27,10 @@ a {
 	width: calc(20% - 30px);
     margin-top: 50px;
 }
+.list_personalElement li {
+	text-transform: uppercase;
+	text-align: center;
+}
 .version {
 	position: fixed;
 	right: 0;
@@ -100,11 +104,12 @@ label {
     border: 1px solid #CCC;
 }
 .cell {
+	text-align: center;
 	background-repeat: no-repeat;
 }
 li {
     display: block;
-    min-height: 52px;
+    min-height: 30px;
     padding: 15px;
     border-bottom: 1px solid #CCC;
 }

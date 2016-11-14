@@ -16,8 +16,9 @@ $(".openConfig").on("click", function(){
 	$(".config").fadeIn(100);
 });
 $(".export").on("click", function(){
-	GS.exportBackground();
-	GS.exportCollision();
+	//GS.exportBackground();
+	//GS.exportCollision();
+	GS.exportLevel();
 });
 $(".generateWithExist").on("click",function(){
 	var text = $(".text_exist").val();
@@ -27,4 +28,24 @@ $(".generateWithExist").on("click",function(){
 });
 $(".Openusing").on("click", function(){
 	$(".using").fadeIn(100);
+});
+$(".addElement").on("click", function(){
+	var title = $(".newPersonalElement").val();
+	var r = Math.round(Math.random()*255);
+	var g = Math.round(Math.random()*255);
+	var b = Math.round(Math.random()*255);
+	var a = 0.5; //transparencia entre 0 a 1
+	var color_aleatorio = "rgba("+r+", "+g+", "+b+", "+a+")";
+	$(".list_personalElement").append("<li data-value='"+title+"' data-color='"+color_aleatorio+"' class='elementPersonal' style='background-color:"+color_aleatorio+"'>"+title+"</li>");
+	$(".newPersonalElement").val('');
+	var element = $(".elementPersonal").attr("data-value");
+	tilesActive = "pe";
+	personalElement = title;
+	var arr_element = new Array(title);
+	arrayElements.push(arr_element);
+		$(".elementPersonal").on("click", function(){
+			personalElement = $(this).attr("data-value");
+			$(".selectObject").css("border","1px solid #CCC");
+			tilesActive = "pe";
+		});
 });
