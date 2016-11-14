@@ -170,7 +170,6 @@ var GS = {
         dlink.download = name;
         dlink.href = window.URL.createObjectURL(blob);
         dlink.onclick = function(e) {
-            // revokeObjectURL needs a delay to work properly
             var that = this;
             setTimeout(function() {
                 window.URL.revokeObjectURL(that.href);
@@ -221,11 +220,8 @@ var GS = {
 	    		
 	    		var element = arrayElements[a];
 	    		console.log("Elements " + element);
-	    		//coodinatesExport[a] = element;
 	    		var coodinatesExport = [];
 	    		$(".scene table tr td[data-element='"+element+"']").each(function(i){
-	    			
-	    			//elementExport[element] = element;
 	    			var linElement = $(this);
 		        	coodinatesExport.push([parseInt(linElement.attr("data-col")),parseInt(linElement.attr("data-row"))]);
 		        	elementExport[element] = coodinatesExport;
@@ -233,8 +229,7 @@ var GS = {
 	    			
 	    		
 	    	}
-	    	console.log(JSON.stringify(elementExport));
-    	//GS.downloadFile("level.json", elementExport);
+    	GS.downloadFile("level.json", elementExport);
     }else{
     	console.log("Elements not found " +JSON.stringify(arrayElements));
     }
